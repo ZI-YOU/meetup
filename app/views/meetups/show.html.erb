@@ -1,0 +1,6 @@
+<h2><%= @meetup.title %></h2>
+
+<p><%= @meetup.description %></p>
+
+<%= link_to "edit", edit_meetup_path %>
+<%= link_to "destroy", @meetup, method: :delete, date: { confirm: "Are you sure?" } %>

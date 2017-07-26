@@ -1,1 +1,21 @@
-<h1></h1>
+<h2> Meetups </h2>
+
+<table>
+ <thead>
+ 	<tr>
+ 	  <th>Title</th>
+ 	  <th>Description</th>
+ 	</tr>
+ </thead>
+ <tbody>
+   <% @meetups.each do |meetup| %>
+ 	<tr>
+ 	  <td><%= link_to meetup.title, meetup %></td>
+ 	  <td><%= meetup.description %></td>
+ 	</tr>
+   <% end %>
+ </tbody>
+</table>
+<br>
+
+<%= link_to "New Meetup", new_meetup_path %>
