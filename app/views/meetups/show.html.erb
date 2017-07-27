@@ -1,6 +1,8 @@
-<h2><%= @meetup.title %></h2>
+<div class="col-md-12">
+  <h2><%= @meetup.title %></h2>
 
-<p><%= @meetup.description %></p>
+  <p><%= @meetup.description %></p>
 
-<%= link_to "edit", edit_meetup_path %>
-<%= link_to "destroy", @meetup, method: :delete, date: { confirm: "Are you sure?" } %>
+  <%= link_to "edit", edit_meetup_path %>
+  <%= link_to "destroy", @meetup, method: :delete, date: { confirm: "Are you sure?" } %>
+</div>
