@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
+
   root 'meetups#index'
-  resources :meetups
+
+  resources :meetups do
+  	resources :comments
+  end
 end

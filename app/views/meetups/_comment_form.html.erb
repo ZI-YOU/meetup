@@ -1,0 +1,4 @@
+<%= form_for(Comment.new, url: meetup_comments_path(@meetup)) do |f| %>
+  <%= f.text_area :message %><br>
+  <%= f.submit "留言", :disable_with => "Submitting..." %>
+<% end %>

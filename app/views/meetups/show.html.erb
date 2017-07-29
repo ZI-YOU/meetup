@@ -3,6 +3,22 @@
 
   <p><%= @meetup.description %></p>
 
+  <% if @meetup.comments.empty? %>
+    <p>尚未有人留言</p>
+  <% else %>
+    <% @floor = 1 %>
+    <% @meetup.comments.each do |comment| %>
+      <%= @floor %>楼
+      <div class="col-md-12">
+      	<p><%= comment.message %></p>
+      </div>
+      <% @floor = @floor + 1 %>
+      <br>
+    <% end %>
+  <% end %>
+
+  <%= render 'comment_form' %>
+
   <%= link_to "edit", edit_meetup_path %>
   <%= link_to "destroy", @meetup, method: :delete, date: { confirm: "Are you sure?" } %>
 </div>
